@@ -12,21 +12,19 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> </head>
 
 <body>
+    <h1>Gooey Menu</h1>
+    <h2>Using CSS and SVG Filters</h2>
+    <h3>By <a href="http://codepen.io/lbebber">Lucas Bebber</a></h3>
     <nav class="menu">
-        <input type="checkbox" href="#" class="menu-open" id="menu-open" />
-        <label class="menu-open-button" for="menu-open">
-            <span class="hambuger hambuger-1"></span>
-            <span class="hambuger hambuger-2"></span>
-            <span class="hambuger hambuger-2"></span>
-        </label>
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open"> <span class="hamburger hamburger-1"></span> <span class="hamburger hamburger-2"></span> <span class="hamburger hamburger-3"></span> </label>
+        <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+        <a href=@ "#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-cog"></i> </a>
     </nav>
-    <a href="#" class="menu-item"><i class="fa fa-bar-chart"></i> </a>
-    <a href="#" class="menu-item"><i class="fa fa-bar-plus"></i> </a>
-    <a href="#" class="menu-item"><i class="fa fa-bar-heart"></i> </a>
-    <a href="#" class="menu-item"><i class="fa fa-bar-envelope"></i> </a>
-    <a href="#" class="menu-item"><i class="fa fa-bar-cog"></i> </a>
-
-    <!--   svg filters -->
+    <!-- filters -->
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
             <filter id="shadowed-goo">
@@ -36,24 +34,12 @@
                 <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
                 <feOffset in="shadow" dx="1" dy="1" result="shadow" />
                 <feBlend in2="shadow" in="goo" result="goo" />
-                <feBlend in2="goo" in="SourceGraphic" result="mix" />
-            </filter>
+                <feBlend in2="goo" in="SourceGraphic" result="mix" /> </filter>
             <filter id="goo">
                 <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
                 <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                <feBlend in2="goo" in="SourceGraphic" result="mix" />
-            </filter>
+                <feBlend in2="goo" in="SourceGraphic" result="mix" /> </filter>
         </defs>
     </svg>
-
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/what-input.min.js"></script>
-    <!--    <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>-->
-    <script src="js/foundation.min.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
-    <script src="js/app.js"></script>
 </body>
-
 </html>
